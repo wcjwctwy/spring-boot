@@ -35,12 +35,15 @@ public class SqlProvider {
         if(orders!=null) {
             orders.forEach(sql::ORDER_BY);
         }
-
-        return sql.toString()+tableSql.getLimit();
+        Long limit = tableSql.getLimit();
+        if(limit!=null){
+            return sql.toString()+" limit "+limit;
+        }
+        return sql.toString();
     }
 
 
-    public void groupOrAnd(TableSql sqlCondition,SQL sql) throws Exception{
+    private void groupOrAnd(TableSql sqlCondition,SQL sql) throws Exception{
         Map<String, String> and = sqlCondition.getAnd();
         Map<String, String> or = sqlCondition.getOr();
         if(and!=null&&and.size()>0) {

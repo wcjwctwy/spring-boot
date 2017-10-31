@@ -5,9 +5,9 @@ import java.util.Map;
 
 public interface TableSql {
      String getTableName() throws Exception;
-     List<String> addSelectCols(String col) throws Exception;
+     List<String> addSelectCol(String col) throws Exception;
      List<String> addGroupCol(String col) throws Exception;
-     List<String> addOrderCols(String col) throws Exception;
+     List<String> addOrderCol(String col) throws Exception;
      Long getLimit() throws Exception;
      Map<String,String> getOr() throws Exception;
      Map<String,String> addAnd(String col,String colValue,boolean quote);

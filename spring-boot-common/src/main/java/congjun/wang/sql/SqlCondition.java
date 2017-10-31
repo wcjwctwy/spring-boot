@@ -34,6 +34,10 @@ public class SqlCondition implements TableSql {
     }
 
     public List<String> getSelectCols() {
+        if(selectCols==null||selectCols.size()==0){
+            selectCols=new ArrayList<>();
+            selectCols.add("*");
+        }
         return selectCols;
     }
 
@@ -99,7 +103,7 @@ public class SqlCondition implements TableSql {
     }
 
     @Override
-    public List<String> addOrderCols(String col) throws Exception {
+    public List<String> addOrderCol(String col) throws Exception {
         if(!StringUtils.isEmpty(orders)){
             orders=new ArrayList<>();
         }
@@ -108,7 +112,7 @@ public class SqlCondition implements TableSql {
     }
 
     @Override
-    public List<String> addSelectCols(String col) throws Exception {
+    public List<String> addSelectCol(String col) throws Exception {
         if(!StringUtils.isEmpty(selectCols)){
             selectCols =new ArrayList<>();
         }
@@ -118,10 +122,10 @@ public class SqlCondition implements TableSql {
 
     public SqlCondition(Object obj){
         try {
-            String[] classes = and.get("class").split("\\.");
+            Map<String, String> result = PojoUtils.transObj2Map(obj);
+            String[] classes = result.get("class").split("\\.");
             String className = classes[classes.length - 1];
             tableName = transObjField2tableRow(className).substring(1);
-            Map<String, String> result = PojoUtils.transObj2Map(obj);
             result.remove("class");
             result.forEach((k, v)->{
                 if(v!=null) {
@@ -129,7 +133,7 @@ public class SqlCondition implements TableSql {
                 }
             });
             values = and;
-            LOGGER.debug("初始化describe:"+ and.toString());
+            LOGGER.debug("初始化describe:"+ and);
         }catch (Exception e){
             LOGGER.debug("初始化SqlCondition出错了!",e);
         }
