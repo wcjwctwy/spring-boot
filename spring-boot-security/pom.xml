@@ -14,20 +14,20 @@
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>chapter01</module>
-        <module>chapter02</module>
-        <module>chapter03</module>
+        <module>security-chapter01</module>
+        <module>security-chapter02</module>
+        <module>security-chapter03</module>
     </modules>
 
 <dependencies>
     <dependency>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
+        <artifactId>spring-boot-starter-thymeleaf</artifactId>
     </dependency>
-    <!--<dependency>-->
-        <!--<groupId>org.springframework.boot</groupId>-->
-        <!--<artifactId>spring-boot-starter-security</artifactId>-->
-    <!--</dependency>-->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
     <dependency>
         <groupId>org.thymeleaf.extras</groupId>
         <artifactId>thymeleaf-extras-springsecurity4</artifactId>
