@@ -127,6 +127,7 @@ public class SqlCondition implements TableSql {
             String className = classes[classes.length - 1];
             tableName = transObjField2tableRow(className).substring(1);
             result.remove("class");
+            and=new HashMap<>();
             result.forEach((k, v)->{
                 if(v!=null) {
                     and.put(transObjField2tableRow(k), v);

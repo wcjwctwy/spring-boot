@@ -30,12 +30,27 @@
 		<mybatis.version>1.3.1</mybatis.version>
 		<servlet.version>2.5</servlet.version>
 		<jackson.version>2.8.8</jackson.version>
+		<shiro.version>1.3.2</shiro.version>
+		<thymeleaf-shiro.version>1.2.1</thymeleaf-shiro.version>
 		<commons-beanutils-version>1.9.3</commons-beanutils-version>
 		<commons-lang3.version>3.5</commons-lang3.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
+
+			<!--thymeleaf 中使用shiro标签-->
+			<dependency>
+				<groupId>com.github.theborakompanioni</groupId>
+				<artifactId>thymeleaf-extras-shiro</artifactId>
+				<version>${thymeleaf-shiro.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-all -->
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-all</artifactId>
+				<version>${shiro.version}</version>
+			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
 			<dependency>
 				<groupId>org.mybatis.spring.boot</groupId>
