@@ -51,6 +51,13 @@
 				<artifactId>shiro-all</artifactId>
 				<version>${shiro.version}</version>
 			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-cas -->
+			<dependency>
+				<groupId>org.apache.shiro</groupId>
+				<artifactId>shiro-cas</artifactId>
+				<version>${shiro.version}</version>
+			</dependency>
+
 			<!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
 			<dependency>
 				<groupId>org.mybatis.spring.boot</groupId>
