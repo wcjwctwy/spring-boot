@@ -12,11 +12,15 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Set;
 
 public class UserRealm extends AuthorizingRealm{
+
+    private final static Logger LOGGER = LoggerFactory.getLogger(UserRealm.class);
 
     @Autowired
     private UserService userService;
@@ -34,8 +38,10 @@ public class UserRealm extends AuthorizingRealm{
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         if(user!=null) {
             Set<String> roleNames = roleService.getRoleNamesByUserId(user.getId());
+            LOGGER.debug("roleNames: "+roleNames);
             info.addRoles(roleNames);
             Set<String> permissionNames = permissionService.getPermissionNamesByUserId(user.getId());
+            LOGGER.debug("permissionNames: "+permissionNames);
             info.addStringPermissions(permissionNames);
         }
         return info;
