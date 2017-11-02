@@ -17,6 +17,8 @@
         <module>shiro-chapter01</module>
         <module>shiro-chapter02-server</module>
         <module>shiro-chapter02-client</module>
+        <module>shiro-chapter03-client</module>
+        <module>shiro-chapter03-server</module>
     </modules>
 
     <dependencies>
