@@ -95,7 +95,7 @@ public class ShiroClientConfig {
         casRealm.setDefaultPermissions("user:view");
         casRealm.setDefaultRoles("vip");
         casRealm.setCasServerUrlPrefix("http://server.cas.com:8081/");
-        casRealm.setCasService(" http://application.examples.com/shiro-cas");
+        casRealm.setCasService("http://application.examples.com/shiro-cas");
         return casRealm;
     }
 

@@ -77,22 +77,22 @@ public class ShiroConfiguration {
 
     @Bean
     @Autowired
-    public ShiroFilterFactoryBean getShiroFilterFactoryBean(SecurityManager securityManager,Map<String ,String> filterChainDefinedMap){
+    public ShiroFilterFactoryBean getShiroFilterFactoryBean(SecurityManager securityManager){
         ShiroFilterFactoryBean filter = new ShiroFilterFactoryBean();
         filter.setSuccessUrl("/index");
         filter.setLoginUrl("/login");
         filter.setSecurityManager(securityManager);
         filter.setUnauthorizedUrl("/403");
-        filter.setFilterChainDefinitionMap(filterChainDefinedMap);
+        filter.setFilterChainDefinitionMap(getFilterChainDefinedMap());
         return filter;
     }
 
-    @Bean
+
     public Map<String ,String>getFilterChainDefinedMap(){
         LinkedHashMap<String ,String> filterChain = new LinkedHashMap<>();
         filterChain.put("/user","authc");
-        filterChain.put("/user/**","authc,roles[admin]");
-        filterChain.put("/user/edit/*","authc,perms[admin,user:edit]");
+//        filterChain.put("/user/**","authc,roles[admin]");
+        filterChain.put("/user/edit/*","authc,perms[user:edit]");
         filterChain.put("/login","anon");
         filterChain.put("/register","anon");
         filterChain.put("/index","anon");

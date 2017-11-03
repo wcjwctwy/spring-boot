@@ -7,6 +7,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -66,7 +67,7 @@ public class UserController {
             model.addAttribute("msg","登录失败！用户名或密码错误！");
             return "login";
         }
-        if(service!=null){
+        if(!StringUtils.isEmpty(service)){
             /**
              * 配置单点登录
               */
