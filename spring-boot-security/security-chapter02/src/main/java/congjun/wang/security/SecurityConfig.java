@@ -27,13 +27,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()//配置安全策略
-                .antMatchers("/","/hello").permitAll()//定义/请求不需要验证
-                .anyRequest().authenticated()//其余的所有请求都需要验证
+        //配置安全策略
+        http.authorizeRequests()
+                //定义/请求不需要验证
+                .antMatchers("/index","/hello","/css/**","/js/**","/image/**").permitAll()
+                .antMatchers().hasRole("USER")
+                //其余的所有请求都需要验证
+                .anyRequest().authenticated()
                 .and()
                 .logout()
-                .permitAll()//定义logout不需要验证
+                //定义logout不需要验证
+                .permitAll()
                 .and()
-                .formLogin();//使用form表单登录
+                //使用form表单登录
+                .formLogin();
     }
 }

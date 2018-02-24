@@ -1,0 +1,4 @@
+security:
+  user:
+    password: 890610
+    role: ADMIN

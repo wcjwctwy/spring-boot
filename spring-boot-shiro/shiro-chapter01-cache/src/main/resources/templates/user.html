@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>id</th>
+        <th>用户名</th>
+        <th>密码</th>
+        <th>邮箱</th>
+        <th colspan="2">操作</th>
+    </tr>
+    <tr th:each="user,uS:${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.password}"></td>
+        <td th:text="${user.email}"></td>
+        <td><a th:href="'/user/edit/'+${user.id}">编辑</a></td>
+        <td><a th:href="'/user/del/'+${user.id}">删除</a></td>
+    </tr>
+</table>
+<a href="/index">返回主页</a>
+<a href="/logout">退出</a>
+</body>
+</html>

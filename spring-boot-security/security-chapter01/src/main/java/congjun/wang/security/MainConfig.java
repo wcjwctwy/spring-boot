@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;  
   
 @RestController  
-@SpringBootApplication  
-@EnableWebSecurity //启用web安全  
+@SpringBootApplication
+/**
+ * 启用web安全
+ */
+@EnableWebSecurity
 public class MainConfig {  
     public static void main(String[] args) {  
         SpringApplication.run(MainConfig.class, args);  

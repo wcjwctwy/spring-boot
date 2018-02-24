@@ -15,10 +15,13 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>shiro-chapter01</module>
+        <module>shiro-chapter01-cache</module>
         <module>shiro-chapter02-server</module>
         <module>shiro-chapter02-client</module>
         <module>shiro-chapter03-client</module>
         <module>shiro-chapter03-server</module>
+        <module>shiro-chapter04-oauth2-server</module>
+        <module>shiro-chapter04-oauth2-client</module>
     </modules>
 
     <dependencies>

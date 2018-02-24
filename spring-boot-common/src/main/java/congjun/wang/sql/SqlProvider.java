@@ -21,6 +21,14 @@ public class SqlProvider {
         return sql.toString();
     }
 
+    public String update(TableSql sqlCondition)throws Exception{
+        SQL sql = new SQL();
+        sql.UPDATE(sqlCondition.getTableName());
+        sqlCondition.getValues().forEach((k,v)->sql.SET(k+"="+v));
+        groupOrAnd(sqlCondition,sql);
+        return sql.toString();
+    }
+
     public String select(TableSql tableSql)throws Exception{
         SQL sql = new SQL();
         List<String> selectCols = tableSql.getSelectCols();

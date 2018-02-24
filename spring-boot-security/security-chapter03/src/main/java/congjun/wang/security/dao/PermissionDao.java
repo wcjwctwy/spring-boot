@@ -20,5 +20,5 @@ public interface PermissionDao {
             "        LEFT JOIN sys_permission_role spr on spr.role_id=r.id\n" +
             "        LEFT JOIN sys_permission p on p.id =spr.permission_id\n" +
             "        where u.id=#{userId}")
-     List<SysPermission> findByAdminUserId(int userId);
+    List<SysPermission> findByAdminUserId(int userId);
 }

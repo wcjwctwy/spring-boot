@@ -19,14 +19,24 @@ public class MainConfig {
     public String security() {  
         return "hello world security";  
     }
-    @RequestMapping("/hello")
+    @RequestMapping("/css")
     public String hello() {
         return "不验证哦";
     }
 
     @PreAuthorize("")
-    @RequestMapping("/hello_role")
+    @RequestMapping("/js")
     public String hello1() {
         return "不验证哦";
+    }
+
+    @RequestMapping("/index")
+    public String index() {
+        return "this user index";
+    }
+
+    @RequestMapping("/user")
+    public String user() {
+        return "this user list";
     }
 }  
