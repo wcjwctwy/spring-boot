@@ -1,0 +1,17 @@
+security:
+  ignored: /favicon.ico,/scripts/**,/styles/**,/images/**
+  sessions: ALWAYS
+  oauth2:
+      sso:
+        loginPath: /login
+      client:
+        clientId: ssoclient
+        clientSecret: ssosecret
+        accessTokenUri: http://localhost/oauth/token
+        userAuthorizationUri: http://localhost/oauth/authorize
+        clientAuthenticationScheme: form
+      resource:
+        jwt:
+          keyUri: http://localhost/oauth/token_key
+server:
+  context-path: /client
