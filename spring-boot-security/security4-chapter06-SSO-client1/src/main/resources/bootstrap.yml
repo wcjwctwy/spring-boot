@@ -15,3 +15,13 @@ security:
           keyUri: http://localhost/oauth/token_key
 server:
   context-path: /client
+
+#配置代理服务，让client1具有访问资源服务器resource的权利
+#在实际的开发中可以将一些需要保护起来的服务隐藏在后面，不直接暴露在用户面前
+zuul:
+  routes:
+    resource:
+      path: /resource/**
+      url: http://localhost:8081
+      stripPrefix: true
+      retryable:

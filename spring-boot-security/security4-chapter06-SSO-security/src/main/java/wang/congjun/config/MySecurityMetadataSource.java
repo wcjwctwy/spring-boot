@@ -28,6 +28,7 @@ public class MySecurityMetadataSource implements FilterInvocationSecurityMetadat
     static {
         requestMap = new HashMap<>(0);
         requestMap.put("/test", SecurityConfig.createList("SUPER"));
+        requestMap.put("/resource/**", SecurityConfig.createList("ADMIN"));
     }
 
     @Override

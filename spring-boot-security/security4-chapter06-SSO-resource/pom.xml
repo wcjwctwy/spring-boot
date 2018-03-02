@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>congjun.wang</groupId>
-    <artifactId>security4-chapter06-SSO-client1</artifactId>
+    <artifactId>security4-chapter06-SSO-resource</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
 <dependencies>
@@ -18,14 +18,10 @@
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-starter-oauth2</artifactId>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
     <dependency>
-        <groupId>congjun.wang</groupId>
-        <artifactId>security4-chapter06-SSO-security</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-zuul</artifactId>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
     </dependency>
 </dependencies>
 </project>

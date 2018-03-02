@@ -1,0 +1,8 @@
+
+security:
+  oauth2:
+      resource:
+        jwt:
+          keyUri: http://localhost/oauth/token_key
+server:
+  port: 8081
